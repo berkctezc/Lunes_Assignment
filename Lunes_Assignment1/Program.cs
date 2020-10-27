@@ -47,7 +47,7 @@ namespace Lunes_Assignment1
             }
             Console.WriteLine(sum);
         }
-        public static void Assignment1_5t()
+        public static void Assignment1_5()
         {
             Console.WriteLine("Assignment 1.5 (Alternative Version)");
             int sum = 0;

@@ -6,21 +6,26 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Lunes_Assignment3_MVC.Models;
+using Microsoft.Extensions.Localization;
 
 namespace Lunes_Assignment3_MVC.Controllers
 {
     public class TransactionsController : Controller
     {
+        private readonly IStringLocalizer<TransactionsController> _localizer;
+
         private readonly TransactionContext _context;
 
-        public TransactionsController(TransactionContext context)
+        public TransactionsController(TransactionContext context, IStringLocalizer<TransactionsController> localizer)
         {
             _context = context;
+            _localizer = localizer;
         }
 
         // GET: Transactions
         public async Task<IActionResult> Index()
         {
+            ViewData["YourTransactions"] = _localizer["Your Transactions"];
             return View(await _context.Transactions.ToListAsync());
         }
 
