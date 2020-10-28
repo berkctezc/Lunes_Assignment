@@ -1,18 +1,18 @@
-﻿
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer _localizer
 
 <div>
-    <h1 class="display-4">@ViewData["WelcomeTitle"]</h1>
+    <h1 class="display-4">@_localizer["WelcomeTitle"]</h1>
     <hr>
-    <div style="font-size:18px">@ViewData["Welcome1"]</div>
+    <div style="font-size:18px">@_localizer["Welcome"]</div>
     <br>
     <div style="font-size:14px">
-        @ViewData["WelcomeTech"]
+        @_localizer["WelcomeTech"]
         <ul>
             <li>ASP.NET Core</li>
             <li>Microsoft SQL Server</li>
             <li>Font Awesome</li>
             <li>Bootstrap</li>
         </ul>
-
     </div>
 </div>

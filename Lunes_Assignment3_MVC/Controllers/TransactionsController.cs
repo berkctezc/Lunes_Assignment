@@ -25,7 +25,11 @@ namespace Lunes_Assignment3_MVC.Controllers
         // GET: Transactions
         public async Task<IActionResult> Index()
         {
-            ViewData["YourTransactions"] = _localizer["Your Transactions"];
+            ViewData["YourTransactions"] = _localizer["YourTransactions"];
+            ViewData["TransactionName"] = _localizer["TransactionName"];
+            ViewData["TransactionAmount"] = _localizer["TransactionAmount"];
+            ViewData["NewTransaction"] = _localizer["NewTransaction"];
+            ViewData["Sure"] = _localizer["Sure"];
             return View(await _context.Transactions.ToListAsync());
         }
 

@@ -21,10 +21,9 @@ namespace Lunes_Assignment3_MVC.Controllers
 
         public IActionResult Index()
         {
-            ViewData["WelcomeTitle"] = _localizer["Welcome to my transaction tracking application"];
-            ViewData["Welcome1"] = _localizer["This is an assignment project. To go to the Transactions page click the money logo on the upper right corner of the page"];
-            ViewData["WelcomeTech"] = _localizer["Technologies Used"];
-            ViewData["Title"] = _localizer["Transaction Tracking App"];
+            ViewData["WelcomeTitle"] = _localizer["WelcomeTitle"];
+            ViewData["Welcome"] = _localizer["Welcome"];
+            ViewData["WelcomeTech"] = _localizer["WelcomeTech"];
             return View();
         }
 
